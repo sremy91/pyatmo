@@ -112,6 +112,11 @@ class DeviceType(str, Enum):
     # Magellan
     NLDP = "NLDP"  # Pocket Remote
 
+    # Muller
+    NMG = "NMG"  # Muller gateway
+    NMR = "NMR"  # Muller relay
+    NMH = "NMH"  # Muller heater
+
     @classmethod
     def _missing_(cls, key: object) -> Literal[DeviceType.NLunknown]:
         """Handle unknown device types."""
@@ -199,6 +204,9 @@ DEVICE_CATEGORY_MAP: dict[DeviceType, DeviceCategory] = {
     DeviceType.NIS: DeviceCategory.siren,
     DeviceType.BNCS: DeviceCategory.switch,
     DeviceType.NLLF: DeviceCategory.fan,
+    DeviceType.NMG: DeviceCategory.climate,
+    DeviceType.NMR: DeviceCategory.climate,
+    DeviceType.NMH: DeviceCategory.climate,
 }
 
 
@@ -288,6 +296,10 @@ DEVICE_DESCRIPTION_MAP: dict[DeviceType, tuple[str, str]] = {
     DeviceType.Z3V: ("3rd Party", "Zigbee 3 roller shutter"),
     DeviceType.EBU: ("3rd Party", "EBU gas meter"),
     DeviceType.NLPD: ("Drivia", "Dry contact"),
+    # Muller
+    DeviceType.NMG: ("Muller", "Netatmo Muller Gateway"),
+    DeviceType.NMR: ("Muller", "Netatmo Muller Relay"),
+    DeviceType.NMH: ("Muller", "Netatmo Muller Heater"),
 }
 
 
