@@ -84,6 +84,11 @@ from .netatmo import (
 )
 from .smarther import BNS
 from .somfy import TPSRS
+from .muller import (
+    NMG,
+    NMR,
+    NMH,
+)
 
 __all__ = [
     "BNAB",
@@ -172,4 +177,7 @@ __all__ = [
     "PublicWeatherArea",
     "Shutter",
     "Switch",
+    "NMG",
+    "NMR",
+    "NMH",
 ]
